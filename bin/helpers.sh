@@ -22,7 +22,7 @@ update_dotfiles() {
 		src="$(echo -n $lf | cut -d':' -f1)"
 		dest="$(echo -n $lf | cut -d':' -f2)"
 
-		cp -sTf $src $dest
+		ln -sTf - $src $dest
 
 		# explicit simbolyc link
 		stat -c '%N' "$(echo -n $lf | cut -d':' -f2)"
