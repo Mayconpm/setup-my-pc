@@ -8,6 +8,7 @@ personal_packages=(
 	'onedrive'
 	'dracula'
 	'virtmanager'
+	'calibre'
   )
 
 install_personal(){
@@ -164,7 +165,7 @@ install_virtmanager(){
 success "Virt-Manager installed"
 }
 
-install_calibre{
+install_calibre(){
 	info "Installing Calibre..."
 	user "Based on: https://calibre-ebook.com/pt_BR/download_linux"
 
