@@ -10,9 +10,10 @@ update_dotfiles() {
 	# src:dest
 	link_files=(
 		"$HOME/.smpc/.zshrc:$HOME/.zshrc"
+		"$HOME/.smpc/.asoundrc:$HOME/.asoundrc"
 		"$HOME/.smpc/.gitconfig:$HOME/.gitconfig"
 		"$HOME/.smpc/onedrive:$HOME/.config/onedrive/sync_list"
-
+		"$HOME/.smpc/daemon.conf:$HOME/.config/pulse/daemon.conf"
 	)
 
 	# Link files
