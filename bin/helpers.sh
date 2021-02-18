@@ -12,6 +12,7 @@ update_dotfiles() {
 		"$HOME/.smpc/.zshrc:$HOME/.zshrc"
 		"$HOME/.smpc/.gitconfig:$HOME/.gitconfig"
 		"$HOME/.smpc/onedrive:$HOME/.config/onedrive/sync_list"
+
 	)
 
 	# Link files
@@ -20,7 +21,7 @@ update_dotfiles() {
 		src="$(echo -n $lf | cut -d':' -f1)"
 		dest="$(echo -n $lf | cut -d':' -f2)"
 
-		ln -sTf $src $dest
+		cp -sTf $src $dest
 
 		# explicit simbolyc link
 		stat -c '%N' "$(echo -n $lf | cut -d':' -f2)"
