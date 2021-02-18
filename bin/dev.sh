@@ -36,7 +36,7 @@ install_docker() {
 
 	sudo apt remove docker docker-engine docker.io
 	sudo apt update
-	sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+	sudo apt-fast install apt-transport-https ca-certificates curl software-properties-common -y
 	curl -sSL https://get.docker.com/ | sh
 	warning "Adding '$(whoami)' user to the docker group..."
 	sudo usermod -aG docker $(whoami)
@@ -77,7 +77,7 @@ install_sublimetext() {
 	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 	subl
 	sudo apt-get update
-	sudo apt-get install sublime-text
+	sudo apt-fast install sublime-text
 
 	success "Sublime Text installed"
 }
@@ -92,7 +92,7 @@ install_vscode() {
 
 	sudo apt update
 
-	sudo apt install code
+	sudo apt-fast install code
 
 	success "Visual Studio Code installed"
 }

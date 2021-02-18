@@ -79,5 +79,5 @@ confirm_install() {
 }
 
 update_packages() {
-	sudo apt-get update && sudo apt-get upgrade -y
+	sudo apt-get update && sudo apt-fast upgrade -y && sudo apt autoremove
 }

@@ -16,13 +16,13 @@ basic_packages_install=(
 )
 
 packages_remove=(
-  $(command_exists gnome-calendar || echo gnome-calendar)
-  $(command_exists gnome-contacts || echo gnome-contacts)
-  $(command_exists gnome-weather || echo gnome-weather)
-  $(command_exists firefox || echo firefox)
-  $(command_exists seahorse || echo seahorse)
-  $(command_exists geary || echo geary)
-  $(command_exists gedit || echo gedit)
+  'gnome-calendar'
+  'gnome-contacts'
+  'gnome-weather'
+  'firefox'
+  'seahorse'
+  'geary'
+  'gedit'
 
 )
 
@@ -30,12 +30,19 @@ install_basic() {
   update_packages
 
   if [[ ${#basic_packages_install[@]} != 0 ]]; then
-    sudo apt-get install ${basic_packages_install[@]} -y
+    sudo apt-fast install ${basic_packages_install[@]} -y
   fi
 
   if [[ ${#packages_remove[@]} != 0 ]]; then
-    sudo apt-get remove ${packages_remove[@]} -y
+    sudo apt-fast remove ${packages_remove[@]} -y
   fi
+
+  user "Download Maycon's dotfiles? (y/n)"
+	read choice
+
+	if [[ $choice == "y" ]]; then
+		update_dotfiles
+	fi
 
   success "Basic tools installed"
 }

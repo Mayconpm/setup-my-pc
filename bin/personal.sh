@@ -2,11 +2,11 @@
 
 personal_packages=(
 	'ohmyzsh'
-	'zshplugins'
-	'spotify'
-	'brave'
-	'onedrive'
 	'dracula'
+	'zshplugins'
+	'brave'
+	'spotify'
+	'onedrive'
 	'virtmanager'
 	'calibre'
 	'zotero'
@@ -22,13 +22,6 @@ install_personal() {
 		fi
 
 	done
-
-	user "Download Maycon's dotfiles? (y/n)"
-	read choice
-
-	if [[ $choice == "y" ]]; then
-		update_dotfiles
-	fi
 }
 
 install_ohmyzsh() {
@@ -112,7 +105,7 @@ install_onedrive() {
 
 	sudo apt update
 
-	sudo apt install onedrive
+	sudo apt-fast install onedrive
 
 	onedrive --synchronize --verbose
 
@@ -133,7 +126,7 @@ install_brave() {
 
 	sudo apt update
 
-	sudo apt install brave-browser
+	sudo apt-fast install brave-browser
 
 	success "Brave Browser installed"
 }
@@ -142,7 +135,8 @@ install_virtmanager() {
 	user "Installing Virt-Manager..."
 	info Based on: "https://www.tecmint.com/install-kvm-on-ubuntu/"
 
-	sudo apt install -y qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager
+	sudo apt-fast install -y qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager
+
 	sudo systemctl enable --now libvirtd
 
 	success "Virt-Manager installed"
@@ -155,6 +149,7 @@ install_calibre() {
 	sudo -v
 
 	wget --no-check-certificate -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+
 	success "Calibre installed"
 }
 install_spotify() {
@@ -168,7 +163,7 @@ install_spotify() {
 	# 3. Update list of available packages
 	sudo apt-get update
 	# 4. Install Spotify
-	sudo apt-get install spotify-client -y
+	sudo apt-fast install spotify-client -y
 
 	success "Spotify installed"
 }
@@ -181,7 +176,7 @@ install_zotero() {
 
 	sudo apt-get update
 
-	sudo apt-get install zotero
+	sudo apt-fast install zotero
 
 	success "Zotero installed"
 
