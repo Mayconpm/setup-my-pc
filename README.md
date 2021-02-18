@@ -9,7 +9,7 @@ Easy installation of things on the fresh pc (or not)
 ## Installing
 
 ```bash
-$ git clone https://github.com/jonaselan/setup-my-pc.git
+$ git clone https://github.com/Mayconpm/setup-my-pc.git
 $ cd setup-my-pc
 $ ./install.sh
 ```
@@ -35,37 +35,15 @@ $ smpc install dev
 
 ### Basic
 
-- vim
-- wget
-- curl
-- java
-- node
 
 ### Personal
 
 - ohmyzsh
-- terminator
-- bat
-- ripgrep
-- kolourpaint4
 - spotify
 - vlc
-- fira_code
-- exa
-- sxhkd
 
 ### Dev
 
-- php
-- docker
-- docker-compose
-- composer
-- dbeaver
-- postman
-- htop
-- apache2
-- nginx
-- postgresql
-- mysq
+
 
 Project inspired by [MEOU](https://github.com/DavidCardoso/my-env-on-ubuntu)
