@@ -9,7 +9,7 @@ Action:
 
 Option:
 	basic 		Install basic tools
-	personal 	Install jonaselan personal tools
+	personal 	Install maycon personal tools
 	dev 			Install development tools
 
 Example:
